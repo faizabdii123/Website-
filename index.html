@@ -62,6 +62,18 @@
             animation: spin 1s linear infinite;
         }
 
+        .loader-text {
+            position: absolute;
+            margin-top: 120px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
@@ -94,6 +106,14 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: logoGlow 2s ease-in-out infinite alternate;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            display: block;
+            background: none;
+            -webkit-text-fill-color: #666;
+            font-weight: 400;
         }
 
         @keyframes logoGlow {
@@ -252,6 +272,7 @@
             display: flex;
             gap: 20px;
             justify-content: center;
+            flex-wrap: wrap;
             animation: fadeInUp 1s ease 0.6s both;
         }
 
@@ -264,6 +285,9 @@
             transition: all 0.3s ease;
             cursor: pointer;
             border: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .btn-primary {
@@ -286,6 +310,17 @@
             background: white;
             color: var(--primary);
             transform: translateY(-5px);
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.3);
         }
 
         .scroll-indicator {
@@ -566,6 +601,122 @@
             color: white;
         }
 
+        /* Founder Section */
+        .founder {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .founder-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .founder-image {
+            position: relative;
+        }
+
+        .founder-image-wrapper {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: var(--gradient);
+            padding: 5px;
+            margin: 0 auto;
+            animation: floatFounder 4s ease-in-out infinite;
+        }
+
+        @keyframes floatFounder {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .founder-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+        }
+
+        .founder-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: white;
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .founder-content {
+            color: white;
+        }
+
+        .founder-content h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .founder-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .founder-content .title {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .founder-content .title i {
+            color: #00cec9;
+        }
+
+        .founder-content p {
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        .founder-social {
+            display: flex;
+            gap: 15px;
+        }
+
+        .founder-social a {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .founder-social a:hover {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
         /* Portfolio Section */
         .portfolio {
             padding: 100px 5%;
@@ -742,6 +893,7 @@
             align-items: center;
             justify-content: center;
             font-size: 1.5rem;
+            flex-shrink: 0;
         }
 
         .contact-item div h4 {
@@ -751,6 +903,18 @@
 
         .contact-item div p {
             opacity: 0.9;
+        }
+
+        .contact-item div a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+
+        .contact-item div a:hover {
+            opacity: 1;
+            text-decoration: underline;
         }
 
         .social-links {
@@ -776,6 +940,16 @@
             background: white;
             color: var(--primary);
             transform: translateY(-5px);
+        }
+
+        .social-links a.instagram:hover {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: white;
+        }
+
+        .social-links a.whatsapp:hover {
+            background: #25D366;
+            color: white;
         }
 
         .contact-form {
@@ -850,6 +1024,20 @@
             line-height: 1.8;
         }
 
+        .footer-brand .founder-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-brand .founder-info p {
+            margin-bottom: 5px;
+        }
+
+        .footer-brand .founder-info strong {
+            color: var(--secondary);
+        }
+
         .footer-links h4 {
             font-size: 1.2rem;
             margin-bottom: 25px;
@@ -878,6 +1066,11 @@
             text-align: center;
             padding-top: 30px;
             color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-bottom a {
+            color: var(--secondary);
+            text-decoration: none;
         }
 
         /* Scroll to Top Button */
@@ -933,6 +1126,28 @@
             text-decoration: none;
         }
 
+        .whatsapp-btn::before {
+            content: 'Chat with us!';
+            position: absolute;
+            right: 70px;
+            background: white;
+            color: #25D366;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translateX(10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .whatsapp-btn:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
         @keyframes pulse {
             0%, 100% { box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); }
             50% { box-shadow: 0 5px 40px rgba(37, 211, 102, 0.8); }
@@ -956,6 +1171,19 @@
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .founder-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .founder-content .title {
+                justify-content: center;
+            }
+
+            .founder-social {
+                justify-content: center;
+            }
         }
 
         @media (max-width: 768px) {
@@ -970,6 +1198,7 @@
                 justify-content: center;
                 align-items: center;
                 transition: right 0.4s ease;
+                box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
             }
 
             .nav-links.active {
@@ -1027,6 +1256,19 @@
             .about-image::before {
                 display: none;
             }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .whatsapp-btn::before {
+                display: none;
+            }
         }
 
         /* Animation Classes */
@@ -1074,23 +1316,44 @@
                 opacity: 0;
             }
         }
+
+        /* Typing Animation */
+        .typing-text {
+            overflow: hidden;
+            border-right: 3px solid white;
+            white-space: nowrap;
+            animation: typing 3s steps(30) infinite, blink 0.5s step-end infinite alternate;
+        }
+
+        @keyframes typing {
+            0%, 100% { width: 0; }
+            50% { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
     </style>
 </head>
 <body>
     <!-- Preloader -->
     <div class="preloader">
         <div class="loader"></div>
+        <div class="loader-text">Digi Namo Barkaat</div>
     </div>
 
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="logo">Digi Namo Barkaat</div>
+        <div class="logo">
+            Digi Namo Barkaat
+            <span>Digital Marketing Agency</span>
+        </div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#founder">Founder</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="menu-toggle">
@@ -1116,6 +1379,9 @@
             <div class="hero-buttons">
                 <a href="#contact" class="btn btn-primary">Get Started</a>
                 <a href="#services" class="btn btn-secondary">Our Services</a>
+                <a href="https://wa.me/918303395226" target="_blank" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp Us
+                </a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -1243,6 +1509,44 @@
         </div>
     </section>
 
+    <!-- Founder Section -->
+    <section class="founder" id="founder">
+        <div class="founder-container">
+            <div class="founder-image animate-on-scroll">
+                <div class="founder-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" alt="Faiz Afroz - Founder">
+                </div>
+                <div class="founder-badge">
+                    <i class="fas fa-crown"></i> Founder
+                </div>
+            </div>
+            <div class="founder-content animate-on-scroll">
+                <h3>Meet Our Founder</h3>
+                <h2>Faiz Afroz</h2>
+                <div class="title">
+                    <i class="fas fa-flask"></i>
+                    Biotech Engineer & Digital Marketing Expert
+                </div>
+                <p>With a unique blend of scientific thinking and creative marketing strategies, Faiz Afroz founded Digi Namo Barkaat with a vision to help businesses unlock their digital potential. His background in Biotechnology gives him an analytical approach to solving complex marketing challenges, while his passion for technology drives innovation in every project.</p>
+                <p>Under his leadership, Digi Namo Barkaat has grown into a trusted digital marketing partner for businesses across industries, delivering measurable results and sustainable growth.</p>
+                <div class="founder-social">
+                    <a href="https://www.instagram.com/faiz__abbas" target="_blank" title="Follow on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/918303395226" target="_blank" title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:businesses@diginamobarkaat.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+918303395526" title="Call">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Portfolio Section -->
     <section class="portfolio" id="portfolio">
         <div class="section-header animate-on-scroll">
@@ -1304,7 +1608,7 @@
         <div class="testimonials-container">
             <div class="testimonial-slider">
                 <div class="testimonial-slide animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Client">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Client">
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -1330,24 +1634,31 @@
             <div class="contact-info animate-on-scroll">
                 <h3>Let's Talk Business</h3>
                 <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
+                    <i class="fas fa-user-tie"></i>
                     <div>
-                        <h4>Our Office</h4>
-                        <p>123 Digital Street, Marketing City</p>
+                        <h4>Founder</h4>
+                        <p>Faiz Afroz (Biotech Engineer)</p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-phone-alt"></i>
                     <div>
                         <h4>Phone Number</h4>
-                        <p>+91 98765 43210</p>
+                        <p><a href="tel:+918303395526">+91 83033 95526</a></p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p><a href="https://wa.me/918303395226" target="_blank">+91 83033 95226</a></p>
                     </div>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
                     <div>
                         <h4>Email Address</h4>
-                        <p>info@diginamobarkaat.com</p>
+                        <p><a href="mailto:businesses@diginamobarkaat.com">businesses@diginamobarkaat.com</a></p>
                     </div>
                 </div>
                 <div class="contact-item">
@@ -1358,11 +1669,18 @@
                     </div>
                 </div>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/faiz__abbas" target="_blank" class="instagram" title="Follow us on Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/918303395226" target="_blank" class="whatsapp" title="Chat on WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="mailto:businesses@diginamobarkaat.com" title="Send Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+918303395526" title="Call Us">
+                        <i class="fas fa-phone"></i>
+                    </a>
                 </div>
             </div>
             <form class="contact-form animate-on-scroll">
@@ -1389,6 +1707,11 @@
             <div class="footer-brand">
                 <div class="logo">Digi Namo Barkaat</div>
                 <p>Your trusted partner for digital marketing success. We help businesses grow and thrive in the digital world with innovative solutions and proven strategies.</p>
+                <div class="founder-info">
+                    <p><strong>Founder:</strong> Faiz Afroz</p>
+                    <p><strong>Background:</strong> Biotech Engineer</p>
+                    <p><strong>Email:</strong> <a href="mailto:businesses@diginamobarkaat.com" style="color: var(--secondary);">businesses@diginamobarkaat.com</a></p>
+                </div>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
@@ -1396,6 +1719,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About Us</a></li>
+                    <li><a href="#founder">Founder</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -1411,17 +1735,17 @@
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>Support</h4>
+                <h4>Contact Info</h4>
                 <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Help Center</a></li>
+                    <li><a href="tel:+918303395526"><i class="fas fa-phone"></i> +91 83033 95526</a></li>
+                    <li><a href="https://wa.me/918303395226" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/faiz__abbas" target="_blank"><i class="fab fa-instagram"></i> @faiz__abbas</a></li>
+                    <li><a href="mailto:businesses@diginamobarkaat.com"><i class="fas fa-envelope"></i> Email Us</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Digi Namo Barkaat. All Rights Reserved. Made with ❤️</p>
+            <p>&copy; 2024 Digi Namo Barkaat. All Rights Reserved. | Founded by <a href="https://www.instagram.com/faiz__abbas" target="_blank">Faiz Afroz</a> ❤️</p>
         </div>
     </footer>
 
@@ -1431,7 +1755,7 @@
     </div>
 
     <!-- WhatsApp Button -->
-    <a href="https://wa.me/919876543210" class="floating-element whatsapp-btn" target="_blank">
+    <a href="https://wa.me/918303395226" class="floating-element whatsapp-btn" target="_blank" title="Chat with us on WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -1441,7 +1765,7 @@
             const preloader = document.querySelector('.preloader');
             setTimeout(() => {
                 preloader.classList.add('hidden');
-            }, 1000);
+            }, 1500);
         });
 
         // Navbar scroll effect
@@ -1540,11 +1864,21 @@
             particlesContainer.appendChild(particle);
         }
 
-        // Form submission
+        // Form submission - WhatsApp redirect
         const contactForm = document.querySelector('.contact-form');
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
+            const formData = new FormData(contactForm);
+            const name = contactForm.querySelector('input[type="text"]').value;
+            const email = contactForm.querySelector('input[type="email"]').value;
+            const phone = contactForm.querySelector('input[type="tel"]').value;
+            const message = contactForm.querySelector('textarea').value;
+            
+            const whatsappMessage = `Hello! I'm interested in your digital marketing services.%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Message:* ${message}`;
+            
+            window.open(`https://wa.me/918303395226?text=${whatsappMessage}`, '_blank');
+            
+            alert('Thank you for your interest! Redirecting you to WhatsApp...');
             contactForm.reset();
         });
 
@@ -1556,6 +1890,16 @@
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
+            });
+        });
+
+        // Add hover effect to service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
             });
         });
     </script>
